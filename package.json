@@ -16,29 +16,30 @@
   },
   "license": "MIT",
   "author": "Daniel Cousens",
-  "main": "index.js",
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
   "files": [
-    "async.js",
-    "errors.js",
-    "extra.js",
-    "index.js",
-    "native.js",
-    "nothrow.js"
+    "src"
   ],
   "repository": {
     "type": "git",
     "url": "https://github.com/dcousens/typeforce.git"
   },
   "scripts": {
+    "build": "tsc -p tsconfig.json",
     "coverage": "nyc --check-coverage --branches 100 --functions 100 node test/*.js",
-    "test": "npm run standard && npm run unit",
-    "standard": "standard",
+    "format": "prettier 'ts_src/**/*.ts' --single-quote --trailing-comma=all --write",
+    "lint": "tslint -p tsconfig.json -c tslint.json",
+    "test": "npm run unit",
     "unit": "node test/*.js"
   },
   "dependencies": {},
   "devDependencies": {
+    "@types/node": "12.0.12",
     "nyc": "^13.1.0",
-    "standard": "*",
-    "tape": "^4.6.1"
+    "prettier": "1.18.2",
+    "tape": "^4.6.1",
+    "tslint": "5.18.0",
+    "typescript": "3.5.2"
   }
 }

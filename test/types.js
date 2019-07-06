@@ -1,4 +1,4 @@
-var typeforce = require('../')
+var typeforce = require('../src/').default
 
 function Unmatchable () { return false }
 function Letter (value) {
